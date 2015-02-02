@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>DWF EXport.dll</Assembly>
+    <ClientId>3f663741-4d36-45d1-a1d1-c1a8c752375e</ClientId>
+    <FullClassName>DWFExport.Command</FullClassName>
+    <Text>DWF Export</Text>
+    <Description>Export current project to dwf(x)</Description>
+    <VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+    <VendorId>RHAA</VendorId>
+    <VendorDescription>RHA</VendorDescription>
+  </AddIn>
+<AddIn Type="Command">
+    <Assembly>DWF EXport.dll</Assembly>
+    <ClientId>A2599A22-431C-4766-9D55-6347F03F8D89</ClientId>
+    <FullClassName>DWFExport.CreateNarrativeCommand</FullClassName>
+    <Text>Create Narrative</Text>
+    <Description>Create a narrative of changes</Description>
+    <VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+    <VendorId>RHAA</VendorId>
+    <VendorDescription>RHA</VendorDescription>
+  </AddIn>
+</RevitAddIns>

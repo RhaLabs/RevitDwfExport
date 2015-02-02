@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>C04F90F8-FDC8-4A74-A5DA-407FB246D6F1</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>DWF EXport</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+    <SourceAnalysisOverrideSettingsFile>C:\Users\bcrawford.RHA\AppData\Roaming\ICSharpCode/SharpDevelop4\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <SignAssembly>False</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <RunCodeAnalysis>False</RunCodeAnalysis>
+    <RunSourceAnalysis>False</RunSourceAnalysis>
+  <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <StartAction>Project</StartAction>
+    <DefineConstants>DEBUG</DefineConstants>
+    <DebugType>Full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug</OutputPath>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <Optimize>true</Optimize>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <DefineConstants>/define RELEASE</DefineConstants>
+    <DebugType>None</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RevitAPI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2013\Program\RevitAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2013\Program\RevitAPIUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DWFExport.Properties\Resources.cs" />
+    <Compile Include="DWFExport\Command.cs" />
+    <Compile Include="DWFExport\ExportData.cs" />
+    <Compile Include="DWFExport\ExportDataWithViews.cs" />
+    <Compile Include="DWFExport\ExportDWFData.cs" />
+    <Compile Include="DWFExport\ExportDWFOptionForm.cs" />
+    <Compile Include="DWFExport\ExportFormat.cs" />
+    <Compile Include="DWFExport\MainData.cs" />
+    <Compile Include="DWFExport\RevisionData.cs" />
+    <Compile Include="DWFExport\RevisionSelectForm.cs" />
+    <Compile Include="DWFExport\RevisionSelectForm.Designer.cs">
+      <DependentUpon>RevisionSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DWFExport\SelectionForm.cs" />
+    <Compile Include="DWFExport\SelectViewsData.cs" />
+    <Compile Include="DWFExport\SelectViewsForm.cs" />
+    <Compile Include="DWFExport\Unit.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DWFExport.Properties\Resources.resources" />
+    <EmbeddedResource Include="DWFExport\ExportDWFOptionForm.resources" />
+    <EmbeddedResource Include="DWFExport\ExportWithViewsForm.resources" />
+    <EmbeddedResource Include="DWFExport\SelectionForm.resources" />
+    <EmbeddedResource Include="DWFExport\SelectViewsForm.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DWF EXport.addin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DWF EXport.cd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
